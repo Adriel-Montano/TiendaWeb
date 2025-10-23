@@ -1,0 +1,28 @@
+﻿@model TiendaWeb.Models.Producto
+@{
+    ViewData["Title"] = "Eliminar Producto";
+}
+
+<div class="card p-4 shadow-lg">
+    <h2 class="fw-bold text-center mb-3" style="color:#dc3545;">🗑️ Eliminar Producto</h2>
+    <p class="text-center">¿Seguro que deseas eliminar este registro?</p>
+
+    <dl class="row">
+        <dt class="col-sm-3">ID</dt>
+        <dd class="col-sm-9">@Model.Id</dd>
+        <dt class="col-sm-3">Nombre</dt>
+        <dd class="col-sm-9">@Model.Nombre</dd>
+        <dt class="col-sm-3">Precio</dt>
+        <dd class="col-sm-9">$@Model.Precio</dd>
+        <dt class="col-sm-3">Stock</dt>
+        <dd class="col-sm-9">@Model.Stock</dd>
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <div class="d-flex justify-content-center">
+            <a asp-action="Index" class="btn btn-outline-light me-2">⬅️ Volver</a>
+            <button type="submit" class="btn" style="background:#dc3545; color:white;">Eliminar</button>
+        </div>
+    </form>
+</div>

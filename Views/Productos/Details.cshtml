@@ -1,0 +1,38 @@
+﻿@model TiendaWeb.Models.Producto
+@{
+    ViewData["Title"] = "Detalle de Producto";
+}
+
+<div class="card p-4 shadow-lg text-center">
+    <h2 class="fw-bold mb-4">🧾 Detalle del Producto</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="mb-3 p-3 rounded" style="background-color: rgba(0,0,0,0.2);">
+                <h5 class="text-info fw-bold">ID</h5>
+                <p class="fs-5">@Model.Id</p>
+            </div>
+
+            <div class="mb-3 p-3 rounded" style="background-color: rgba(0,0,0,0.2);">
+                <h5 class="fw-bold" style="color:#28A745;">Nombre</h5>
+                <p class="fs-5">@Model.Nombre</p>
+            </div>
+
+            <div class="mb-3 p-3 rounded" style="background-color: rgba(0,0,0,0.2);">
+                <h5 class="fw-bold" style="color:#17A2B8;">Precio</h5>
+                <p class="fs-5">$@Model.Precio</p>
+            </div>
+
+            <div class="mb-3 p-3 rounded" style="background-color: rgba(0,0,0,0.2);">
+                <h5 class="fw-bold" style="color:#FFC107;">Stock</h5>
+                <p class="fs-5">@Model.Stock unidades</p>
+            </div>
+
+            <div class="d-flex justify-content-center mt-4">
+                <a asp-action="Index" class="btn btn-outline-light me-2">⬅️ Volver</a>
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn" style="background:#007BFF; color:white;">✏️ Editar</a>
+                <a asp-action="Delete" asp-route-id="@Model.Id" class="btn ms-2" style="background:#DC3545; color:white;">🗑️ Eliminar</a>
+            </div>
+        </div>
+    </div>
+</div>
